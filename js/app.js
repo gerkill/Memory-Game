@@ -24,7 +24,8 @@ let icons=['bicycle', 'bicycle', 'rocket', 'rocket', 'balance-scale', 'balance-s
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
  *   - loop through each card and create its HTML
- *   - add each card's HTML to the page (I'm using the append method for this rather than list the cards individually in the HTML as in the starter code.)
+ *   - add each card's HTML to the page (I'm using the append method for this rather than list the cards individually in the HTML as in the starter code.
+ *    Using js  to call items in the $deck).
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
