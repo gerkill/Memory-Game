@@ -16,9 +16,9 @@ Game Functionality
 The real-life game, players flip over cards to locate the pairs that match The goal is to recreate this effect in your project. There are a couple of interactions that you'll need to handle:
 
 Flipping cards
-*What happens when cards match*
-*What happens when cards do not match*
-*When the game finishes*
+*What happens when cards match?*  
+*What happens when cards do not match?*  
+*When the game finishes?*  
 
 Interactivity Guideline
 Keep in mind that the specific functionality demonstrated here (e.g. a card performs a horizontal flip when clicked) is an example. You do not need to have this exact functionality.
@@ -35,5 +35,5 @@ The following are just some of the questions that you'll experience along the wa
 *Should my function be this many lines of code?*
 
 Things to  note:
-1. Used a css technique to make Title and Scoring disappear as smoky text after 60s.
+1. Used a css technique (author cited) to make Title and Scoring disappear as smoky text after 60s.
 2. Trying to keep the html very simple and spare by calling the deck items from the js file.
