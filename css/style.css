@@ -1,0 +1,219 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  background: #000000 style=url('img/brain3.png');
+  font-family: 'Papyrus', 'Arial';
+  
+}
+
+body {
+  width: auto;
+  height:auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: visible;
+  
+}
+
+/* Smoky Text Effect for title. Title and score fades after 1 minute*/
+/*Copyright (c) 2018 by Bennett Feely (https://codepen.io/bennettfeely/pen/lgybC)*/
+
+span {
+  display: inline-block;
+  text-shadow: 0 0 0 whitesmoke;
+  color: white;
+  animation: smoky 10s 60s both;
+}
+
+span:nth-child(even){
+  animation-name: smoky-mirror;
+}
+
+@keyframes smoky {
+  60% {
+    text-shadow: 0 0 10px whitesmoke;
+  }
+  to {
+    transform:
+      translate3d(1rem,-1rem,0)
+      rotate(-40deg)
+      skewX(70deg)
+      scale(1.5);
+    text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@keyframes smoky-mirror {
+  60% {
+    text-shadow: 0 0 10px gray; }
+  to {
+    transform:
+      translate3d(1rem,-1rem,0)
+      rotate(-40deg) 
+      skewX(-70deg)
+      scale(2);
+     text-shadow: 0 0 20px whitesmoke;
+    opacity: 0;
+  }
+}
+
+@for $item from 1 through 11 {
+  span:nth-of-type(#{$item}){ 
+    animation-delay: #{(5 + ($item/8))}s; 
+  }
+} 
+
+/*End of Smoky Text Effext*/
+
+h1 {color:white;
+  font:bolder;
+  font-size: 30px;
+  font-family: 'Papyrus', 'Arial' sans-serif;
+  font-weight: 100;
+  padding-top: 0px;
+}
+
+
+.deck {
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+  background: #007991;  /* fallback for older browsers */
+  background: -webkit-linear-gradient(to right, #009999, #9999ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #009999, #9999ff ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.5);
+}
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: black;
+  display: inline-block;
+  margin: 0px 30px 30px 0px;
+  line-height: 280px;
+  font-size: 0;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 8px;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  font-family: FontAwesome;
+  line-height: 150px;
+}
+
+@media only screen and (max-width: 800px){
+  .deck .card{
+    width: 75px;
+    height: 75px;
+    line-height: 75px;
+  }
+
+  .deck {
+    width: 390px;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .deck .card{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 10px 10px 0 !important;
+  }
+
+  .deck {
+    width: 240px;
+  }
+}
+
+.deck .card:nth-child(4n) {
+  margin: 0 0 15px 0;
+}
+.deck .card:nth-child(n+11) {
+  margin: 0 30px 0 0;
+}
+.deck .card:nth-child(n+11):nth-child(4n) {
+  margin: 0;
+}
+.deck .card.open {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  background: #02b3e4;
+  cursor: default;
+}
+.deck .card.show {
+  font-size: 33px;
+}
+.deck .card.match {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px;
+}
+.deck .card.notmatch {
+  background: red;
+}
+
+#score-panel {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 50em;
+  color: #00ff00;
+  width: 345px;
+  margin-bottom: 10px;
+}
+#score-panel .stars {
+  margin: 1;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+#score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+#score-panel .restart {
+  float: right;
+  cursor: pointer;
+}
+
+*::-moz-selection {
+  background: transparent;
+}
+
+*::selection {
+  background: transparent;
+}
+
+.swal2-overlay {
+  background-color: black;
+}
+
+.font-color {
+  color: white;
+}
